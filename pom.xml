@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.dhatim</groupId>
-        <artifactId>root-oss</artifactId>
-        <version>12.5.4</version>
-    </parent>
-    <groupId>org.dhatim</groupId>
+    <groupId>io.github.knonm</groupId>
     <artifactId>dropwizard-sentry</artifactId>
-    <version>0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Dropwizard bundle for error logging to Sentry</description>
-    <url>https://github.com/dhatim/dropwizard-sentry</url>
+    <url>https://github.com/knonm/dropwizard-sentry</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -22,20 +17,19 @@
     </licenses>
     <developers>
         <developer>
-            <email>dev-oss@dhatim.com</email>
-            <organization>Dhatim</organization>
-            <organizationUrl>http://dhatim.com/</organizationUrl>
+            <email>knonm@disroot.org</email>
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:dhatim/dropwizard-sentry.git</connection>
-        <developerConnection>scm:git:git@github.com:dhatim/dropwizard-sentry.git</developerConnection>
-        <url>git@github.com:dhatim/dropwizard-sentry.git</url>
+        <connection>scm:git:git@github.com:knonm/dropwizard-sentry.git</connection>
+        <developerConnection>scm:git:git@github.com:knonm/dropwizard-sentry.git</developerConnection>
+        <url>git@github.com:knonm/dropwizard-sentry.git</url>
     </scm>
     <dependencies>
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
+            <version>1.2.2</version>
         </dependency>
         <dependency>
             <groupId>io.sentry</groupId>
@@ -46,15 +40,46 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+            <version>4.12</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-testing</artifactId>
             <scope>test</scope>
+            <version>1.2.2</version>
         </dependency>
       </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerVersion>1.8</compilerVersion>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <verbose>false</verbose>
+                    <showDeprecation>true</showDeprecation>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Xlint:-options</arg>
+                        <arg>-Xlint:-processing</arg>
+                        <arg>-Werror</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>

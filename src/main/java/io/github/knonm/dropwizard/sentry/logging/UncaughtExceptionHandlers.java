@@ -1,4 +1,4 @@
-package org.dhatim.dropwizard.sentry.logging;
+package io.github.knonm.dropwizard.sentry.logging;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import org.slf4j.Logger;

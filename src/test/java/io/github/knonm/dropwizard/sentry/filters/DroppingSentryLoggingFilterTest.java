@@ -1,4 +1,4 @@
-package org.dhatim.dropwizard.sentry.filters;
+package io.github.knonm.dropwizard.sentry.filters;
 
 import ch.qos.logback.classic.spi.LoggingEvent;
 import ch.qos.logback.core.spi.FilterReply;
