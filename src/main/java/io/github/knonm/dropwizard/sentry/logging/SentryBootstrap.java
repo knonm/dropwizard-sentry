@@ -4,8 +4,6 @@ import ch.qos.logback.classic.Logger;
 import io.dropwizard.logging.async.AsyncLoggingEventAppenderFactory;
 import io.dropwizard.logging.filter.ThresholdLevelFilterFactory;
 import io.dropwizard.logging.layout.DropwizardLayoutFactory;
-import java.util.Optional;
-import java.util.Set;
 import static org.slf4j.Logger.ROOT_LOGGER_NAME;
 import org.slf4j.LoggerFactory;
 
