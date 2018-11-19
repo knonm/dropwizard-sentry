@@ -1,1 +1,1 @@
-org.dhatim.dropwizard.sentry.logging.SentryAppenderFactory
+io.github.knonm.dropwizard.sentry.logging.SentryAppenderFactory
