@@ -5,8 +5,6 @@ if [ "${TRAVIS_EVENT_TYPE}" == push ] &&
 then
     # the build is triggered by a tag push, and the tag looks like
     # a version number: proceed with release
-    echo ${GPG_SECRET_KEY} | base64 --decode | gpg --import
-    echo ${GPG_OWNERTRUST} | base64 --decode | gpg --import-ownertrust
     mvn versions:set -DnewVersion=${TRAVIS_TAG}
     mvn -s .travis/settings.xml -Prelease deploy
 else
