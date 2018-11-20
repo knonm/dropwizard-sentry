@@ -2,9 +2,12 @@ language: java
 jdk: oraclejdk8
 install: true
 if: tag IS present AND type = push
+before_install:
+- openssl aes-256-cbc -pass pass:${GPG_PASSPHRASE} -in ${GPG_DIR}/secring.gpg.enc -out ${GPG_DIR}/secring.gpg -d
 script: ". .travis/script.sh"
 env:
   global:
+  - GPG_DIR="$(pwd)/.travis"
   - SONATYPE_USERNAME=knonm
   - secure: pwHKNDaSOw9vkwAff6D3IrYbi7Md4evw392z12MVy/GPmgiHQfauISVztAPPd3Pms6tPQN6X23/4fjRrmstbqQgvDrvac/2UikalUv+1fNdXBFdHnDNHTziDOxtGmi4PKzSNwmTXzvAOl+G61rgKjuzZk2+qWP4OGndrXS5byXJWikJgWiXBzcU7Ai6PAnUU231y/LJDqJn0IxzfAjBiD/zfAVJCGi/M/OV7gWEYy68SByEo9u/7mOsk/ZjEMsokR++7ZJY2iXwGCpCK6uC2tF9YsCD2WUCqDjki2/FMLfh1leavi+D7v+jo7FBNwiIN2Y3xTKOufG1XetwJ0jIfVYAZMPIDRaLIlq5zp0w0tem2f/GI15a7PaO5waQvVgvJ+RoSGHovhCtZvGcCJF25NkpVrQ8gSOy8kN7g/S4Now4VWRv/j/nqtZORw/WvFsZL96hdbuG8GBLZmFEbnPhbcEoEKu8NX/zAdywzzwPaItaGtkmorscqNzuxXvE8UdJ+MB7UQ4SOdhEv684l8PiDxYoBmJp6qQj8BmPuLpq0crKammrXy36h3/vsGMdADWiWYJH0g53/i73CMOSdronPfaLr54/CZDlFU0j4AYHUMQYJuc2bAb8Ih2qW1XEWsyG7ZFRn80PRGkJQDGFe6mh1jdur0tIt5/DPQEeToOfW6DE=
   - secure: f4+gP/LQITaVswOq304FH/ejwtSix95qFujS66Ag03BxzoAocN/UHWyTkwIYj76iClVuGx/Jlm6zLmp++I33YdsRsom0OG2ESUEmvLdBTjDoUZHFeC/rpKBoMu+uZxoZg8H3TEWELugN5lx/U+tOTpA33nZ6Qb43Vldm0TWNsE8fpoKTz1xZiVw5cIoAXeMoF2NJzIKargsSna9hFfY+u01h1cHRxGVp+ZACLTuh9yp/8GodYqerncaOKj9ymxHethef/Fu2lv/8zfXrqKvGApKfsKuby380t0/RlM3Cr/agmmnouoz+hMXuM/wFP6yYYITgMMtzEhL+zCwk0xvAa6exmOJZuhCHAw0sLVRASKQyfgN0+n/QeduLssSldkTrN6b82Ew9orVAe6U4i0eWLyt3eVf9IcQgSnDtGxN1NXxlPFcbR3EW6lbNCcOxgzTJUFvUKkaTG7CwRn84oX6MEia4IdQn5L0xRZZwo9p7nIEtwdaIKjk8rTHZpvOs9ZOn8m0UU6uAeiqrLEy8Kfy5G/t1t15JuxEbKXFJofeLnXC9EW9MhR3dLBaN+ZSN3eEs4x14+ZzxAfxsvUklT+MrHIc3+wiPQj/6ynYa1/lCENxE/mkAS00cCkKntV6gI3iMDMHqgC4SKqCtMjnZb9IhBk0coFpeKY7n+nCDW23OfFU=
