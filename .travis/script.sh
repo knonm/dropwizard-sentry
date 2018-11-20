@@ -7,7 +7,7 @@ then
     # a version number: proceed with release
     gpg --keyserver hkp://keys.gnupg.net --recv-keys ${GPG_KEYNAME}
     mvn versions:set -DnewVersion=${TRAVIS_TAG}
-    mvn -s .travis/settings.xml -Prelease deploy
+    mvn -s .travis/settings.xml -P release deploy
 else
     # this is a regular build
     mvn install
