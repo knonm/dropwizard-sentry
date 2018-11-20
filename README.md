@@ -4,7 +4,7 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry)
 [![Javadocs](https://www.javadoc.io/badge/io.github.knonm/dropwizard-sentry.svg)](https://www.javadoc.io/doc/io.github.knonm/dropwizard-sentry)
 
-Dropwizard integration for error logging to [Sentry](https://sentry.io). Forked from [dropwizard-sentry](https://github.com/dhatim/dropwizard-sentry).
+Dropwizard integration for error logging to [Sentry](https://sentry.io). This is a simpler version where you don't need to configure DSN and other options on the application's YAML. Useful when using other logging libs besides Logback (Dropwizard's logging backend). Forked from dhatim's [dropwizard-sentry](https://github.com/dhatim/dropwizard-sentry).
 
 ## Usage
 
