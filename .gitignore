@@ -11,3 +11,5 @@ logs
 tmp/*
 .vscode/
 *.gpg
+pom.xml.versionsBackup
+

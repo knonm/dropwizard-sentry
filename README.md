@@ -1,6 +1,7 @@
 # Dropwizard Sentry
 
-[![Build Status](https://travis-ci.org/knonm/dropwizard-sentry.png?branch=master)](https://travis-ci.org/knonm/dropwizard-sentry)
+[![Build Status](https://travis-ci.org/knonm/dropwizard-sentry.svg?branch=master)](https://travis-ci.org/knonm/dropwizard-sentry)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry)
 
 Dropwizard integration for error logging to [Sentry](https://sentry.io). Forked from [dropwizard-sentry](https://github.com/dhatim/dropwizard-sentry).
 
@@ -35,15 +36,17 @@ appenders:
 |---|---|---|---|
 | `threshold` | ALL | The log level to configure to send to Sentry | `ERROR` |
 
+Other options, like DSN and Sample Rate, should be configured as described on [Sentry documentation](https://docs.sentry.io/clients/java/config/).
+
 ## Maven Artifacts
 
 This project is available in the [Central Repository](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.knonm%22%20AND%20a%3A%22dropwizard-sentry%22). To add it to your project simply add the following dependency to your POM:
 
 ```xml
 <dependency>
-  <groupId>org.knonm</groupId>
+  <groupId>io.github.knonm</groupId>
   <artifactId>dropwizard-sentry</artifactId>
-  <version>1.3.1-1</version>
+  <version>2.1.6</version>
 </dependency>
 ```
 
