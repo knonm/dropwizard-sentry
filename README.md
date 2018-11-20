@@ -1,6 +1,6 @@
 # Dropwizard Sentry
 
-[![Build Status](https://travis-ci.org/knonm/dropwizard-sentry.svg)](https://travis-ci.org/knonm/dropwizard-sentry)
+[![Build Status](https://travis-ci.org/knonm/dropwizard-sentry.svg?branch=master)](https://travis-ci.org/knonm/dropwizard-sentry)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.knonm/dropwizard-sentry)
 
 Dropwizard integration for error logging to [Sentry](https://sentry.io). Forked from [dropwizard-sentry](https://github.com/dhatim/dropwizard-sentry).

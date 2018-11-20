@@ -23,7 +23,7 @@ public class DroppingSentryLoggingFilterTest {
         filter.start();
 
         final LoggingEvent evt = new LoggingEvent();
-        evt.setLoggerName("org.dhatim.sentry");
+        evt.setLoggerName("io.github.knonm.sentry");
         assertEquals(FilterReply.NEUTRAL, filter.decide(evt));
     }
 }

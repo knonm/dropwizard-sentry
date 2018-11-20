@@ -1,7 +1,6 @@
 language: java
 jdk: oraclejdk8
 install: true
-if: tag IS present AND type = push
 before_install:
 - openssl aes-256-cbc -K $encrypted_1feac5ccf2dc_key -iv $encrypted_1feac5ccf2dc_iv
   -in ${GPG_DIR}/secring.gpg.enc -out ${GPG_DIR}/secring.gpg -d
