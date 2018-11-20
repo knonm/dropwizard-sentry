@@ -1,9 +1,10 @@
 language: java
 jdk: oraclejdk8
 install: true
-on:
-  condition: "${TRAVIS_EVENT_TYPE}" == push
-  tags: true
+deploy:
+  on:
+    condition: "${TRAVIS_EVENT_TYPE}" == push
+    tags: true
 script: ". .travis/script.sh"
 env:
   global:
