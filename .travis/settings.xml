@@ -20,5 +20,5 @@
                 <gpg.secretKeyring>${env.GPG_DIR}/secring.gpg</gpg.secretKeyring>
             </properties>
         </profile>
-  </profiles>
+    </profiles>
 </settings>
