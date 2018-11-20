@@ -10,3 +10,4 @@ logs
 .project
 tmp/*
 .vscode/
+*.gpg
